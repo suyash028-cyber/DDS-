@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+ #define size 6//define size
+ int stack[size];
+ int top=-1;
+ //comment for push function
+  void push (int val){
+     if(top<size-1){
+         top++;
+         stack[top]=val;
+         cout<<val<<" inserted successfully"<<endl;
+     }else{
+         cout<<"stack is over flow"<<endl;
+     }
+ }
+ //adding comment for display
+ void display(){
+     if(top==-1){
+          cout<<"Stack is empty"<<endl;
+     }else{
+         for (int i=top; i>=0;i--){
+             cout<<stack[i]<<endl;
+         }
+ }
+ }
+  int main(){
+     push(10);
+     push(4);
+     push(8);
+     push(9);
+     display();
+
+    return 0;
+}
