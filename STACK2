@@ -1,0 +1,47 @@
+#include<iostream>
+using namespace std;
+
+#define size 6
+int stack [size];
+int top=-1;
+void push(int num)
+{
+    if(top<size-1)
+    {
+        top++;
+        stack[top]=num;
+        cout<<num<<"inserted succesfully"<<endl;
+    }
+    else
+    {
+        cout<<"stack is overflow"<<endl;
+    }
+}
+void pop()
+{
+    if (top== -1)
+    {
+        cout<<"stack is underflow"<<endl;
+    }
+    else
+    {
+        cout<<stack[top]<<"removed"<<endl;
+        top--;
+    }
+}
+
+int main()
+{
+    push(10);
+    push(5);
+    push(6);
+    push(8);
+    push(7);
+    push(3);
+    pop();
+    pop();
+    push(16);
+    push(7);
+    push(3);
+    
+}
