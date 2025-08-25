@@ -1,0 +1,57 @@
+#include<iostream>
+using namespace std;
+
+int top = -1;
+#define SIZE 5
+int stack[SIZE];
+void push(int a)
+{
+    if(top==SIZE-1)
+    {
+        cout<<"overflow"<<endl;
+    }
+    else
+    {
+        top++;
+        stack[top]=a;
+        cout<<a<<"inserted";
+        cout<<endl;
+    }
+}
+    void pop()
+    {
+        if(top==-1)
+        {
+            cout<<"stack is empty or underflow"<<endl;
+        }
+        else
+        {
+            cout<<stack[top]<<"removed"<<endl;
+            top--;
+        }
+    }
+        void display()
+        {
+            if(top==-1)
+            {
+                cout<<"stack is empty can not display"<<endl; display();
+            }
+            else
+            {
+                for(int i=top; i>=0; i--)
+                {
+                    cout<<stack[i]<<" ";
+                }
+            }
+        }
+        int main()
+        {
+            push(10);
+            push(20);
+            push(30);
+            push(50);
+            push(80);
+            push(90);
+            pop();
+            push(90);
+        }
